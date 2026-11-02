@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - ShopStore</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="/">ShopStore</a></h1>
+            <nav class="nav">
+                <a href="/" class="nav-link">Products</a>
+                <a href="/cart" class="nav-link">
+                    Cart
+                    <span id="cart-count" class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main container">
+        <div id="order-loading" class="order-loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading order details...</p>
+        </div>
+
+        <div id="order-error" class="order-error" style="display: none;">
+            <div class="error-icon">⚠️</div>
+            <h2>Order Not Found</h2>
+            <p id="error-message">We couldn't find an order with that ID.</p>
+            <a href="/" class="btn btn-primary">Back to Store</a>
+        </div>
+
+        <div id="order-content" class="order-content" style="display: none;">
+            <div class="order-success">
+                <div class="success-icon">✓</div>
+                <h1>Thank You for Your Order!</h1>
+                <p class="order-number">Order #<span id="order-id"></span></p>
+                <p class="order-date">Placed on <span id="order-date"></span></p>
+                <p class="order-email">Confirmation sent to <span id="order-email"></span></p>
+            </div>
+
+            <div class="order-details">
+                <h2>Shipping Address</h2>
+                <address id="shipping-address"></address>
+            </div>
+
+            <div class="order-items-section">
+                <h2>Order Items</h2>
+                <div class="order-items" id="order-items">
+                    <!-- Items will be loaded here -->
+                </div>
+            </div>
+
+            <div class="order-summary-final">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="final-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span id="final-shipping">$0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total Paid</span>
+                    <span id="final-total">$0.00</span>
+                </div>
+            </div>
+
+            <div class="order-actions">
+                <a href="/" class="btn btn-primary">Continue Shopping</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ShopStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

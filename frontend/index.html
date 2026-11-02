@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo"><a href="/">ShopStore</a></h1>
+            <nav class="nav">
+                <a href="/" class="nav-link active">Products</a>
+                <a href="/cart" class="nav-link">
+                    Cart
+                    <span id="cart-count" class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main container">
+        <section class="hero">
+            <h2>Discover Great Products</h2>
+            <p>Quality items at affordable prices</p>
+        </section>
+
+        <div class="filters">
+            <select id="category-filter" class="filter-select">
+                <option value="">All Categories</option>
+            </select>
+            <input type="text" id="search-input" class="filter-search" placeholder="Search products...">
+        </div>
+
+        <div id="products-grid" class="products-grid">
+            <!-- Products will be loaded here -->
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading products...</p>
+        </div>
+
+        <div id="empty-state" class="empty-state" style="display: none;">
+            <p>No products found</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ShopStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
